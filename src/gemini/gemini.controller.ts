@@ -7,7 +7,11 @@ export class GeminiController {
   constructor(private readonly geminiService: GeminiService) {}
 
   @Post('basic-prompt')
-  basicPrompt(@Body() basicPromptDto: BasicPromptDto) {
-    return this.geminiService.basicPrompt(basicPromptDto);
+  async basicPrompt(@Body() basicPromptDto: BasicPromptDto) {
+    const response = await this.geminiService.basicPrompt(basicPromptDto);
+
+    return {
+      response,
+    };
   }
 }
