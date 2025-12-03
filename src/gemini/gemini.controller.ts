@@ -10,8 +10,6 @@ export class GeminiController {
   async basicPrompt(@Body() basicPromptDto: BasicPromptDto) {
     const response = await this.geminiService.basicPrompt(basicPromptDto);
 
-    return {
-      response,
-    };
+    return response;
   }
 }
