@@ -11,7 +11,7 @@ export const basicPromptStreamUseCase = async (
   basicPromptDto: BasicPromptDto,
   options?: Options,
 ) => {
-  const { prompt } = basicPromptDto;
+  const { prompt, files } = basicPromptDto;
   const {
     model = 'gemini-2.5-flash',
     systemInstruction = 'Responde únicamente en español, en formato markdown',
