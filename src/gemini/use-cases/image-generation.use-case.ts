@@ -41,7 +41,9 @@ export const imageGenerationUseCase = async (
     },
   ];
 
-  const uploadedFiles = await geminiUploadFiles(ai, files);
+  const uploadedFiles = await geminiUploadFiles(ai, files, {
+    transformToPng: true,
+  });
 
   uploadedFiles.forEach((file) => {
     contents.push(createPartFromUri(file.uri ?? '', file.mimeType ?? ''));
